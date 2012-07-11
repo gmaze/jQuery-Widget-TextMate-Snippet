@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/*
+
+	jQuery UI namespace: ${1:namespace}
+	Widget:  ${2:widgetname}
+	Version: ${3:version}
+	
+	Create a widget instance via: 
+		\$( "#something" ).$2()
+
+	The plugin instance is accessible via: 
+		\$( "#something" ).data("$2")	
+
+	Widget public methods accessible via:
+		\$( "#something" ).$2("SomePublicMethod")
+		\$( "#something" ).data("$2").SomePublicMethod()
+
+	Set-up Widget options via:
+		\$( "#something" ).$2("option","OptionName",OptionValue)
+		\$( "#something" ).$2("option",{OptionName: OptionValue, OptionName: OptionValue})
+
+	Standard Methods:
+		\$( "#something" ).$2("destroy")
+		\$( "#something" ).$2("widget")
+						
+	Creation date: 2012-06-05 
+	Author: Guillaume Maze
+	
+*/
+
+(function(  ) {
+	\$.widget( "$1.$2", {
+ 
+		/* ------------------------------------
+			WIDGET DEFAULTS OPTIONS
+		------------------------------------ */
+		options: { 
+			OptionName: 'OptionValue', // Standard option with a value
+//			OptionNameCallBack: {function(){}} // Option with a callback function
+		},
+ 
+		/* ------------------------------------
+			WIDGET SET UP METHOD
+		------------------------------------ */
+		_create: function() {
+			var self = this,
+				options = self.options;
+				// Call private methods like: self._PrivateMethod
+				
+				// YOUR CODE HERE
+		
+		},
+		
+ 		/* ------------------------------------
+			WIDGET PRIVATE METHODS
+			Insert your private methods with an underscore
+		------------------------------------ */
+		_PrivateMethod: function(){
+			// Code here
+		},
+ 
+		/* ------------------------------------
+			WIDGET PUBLIC METHODS
+		------------------------------------ */		
+		// Insert your public methods here:
+		SomePublicMethod: function(){
+			// Code here
+		},
+		
+		/* ------------------------------------
+			OPTIONS HANDLERS (PRIVATE METHODS)
+		------------------------------------ */
+		// Use the _setOption method to respond to changes to options
+		_setOption: function( key, value ) {
+			switch( key ) {
+				case "OptionName":
+					// Handle changes to OptionName
+				break;
+			}
+ 
+			// In jQuery UI 1.8, you have to manually invoke the _setOption method from the base widget
+			\$.Widget.prototype._setOption.apply( this, arguments );
+			// In jQuery UI 1.9 and above, you use the _super method instead
+			// this._super( "_setOption", key, value );
+		},
+		_setOptions: function( options ) {
+			var self = this;
+			\$.each( options, function( key, value ) {
+				self._setOption( key, value );
+			});
+		},
+		
+		/* ------------------------------------
+			WIDGET STANDARD PUBLIC METHODS
+		------------------------------------ */		
+		// Use the destroy method to clean up any modifications your widget has made to the DOM
+		destroy: function() {
+			// In jQuery UI 1.8, you must invoke the destroy method from the base widget
+			\$.Widget.prototype.destroy.call( this );
+			// In jQuery UI 1.9 and above, you would define _destroy instead of destroy and not call the base method
+		},
+		// Return the widget object:
+		widget: function() {
+			return this.container;
+		}
+	});
+	
+	$.extend(\$.$1.$2, {
+		version: "$3"
+	});
+	
+}( jQuery ) );</string>
+	<key>name</key>
+	<string>jQuery UI widget</string>
+	<key>scope</key>
+	<string>source.js.jquery</string>
+	<key>tabTrigger</key>
+	<string>widget</string>
+	<key>uuid</key>
+	<string></string>
+</dict>
+</plist>
