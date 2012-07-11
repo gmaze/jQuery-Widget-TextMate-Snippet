@@ -2,5 +2,8 @@ In a recent project I came to write a couple of jQuery UI widgets to build the u
 I thus set up a clean jQuery UI widget snippet for my favorite text editor TextMate to easily create widgets. 
 Note that you can easily modify the source code to create a template instead a of snippet.
 
+How to install:
+Download the tmSnippet file and double click it. This will automatically install it in TextMate.
+
 Note:
 The scope selector is source.js.jquery provided by the excellent jQuery TextMate bundle (by K. Swedberg and J. Chaffer, see https://github.com/kswedberg/jquery-tmbundle), but you could prefer source.js ...
